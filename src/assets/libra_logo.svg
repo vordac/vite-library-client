@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 839 444">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #1a2e35;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #1a2e35;
+      }
+
+      .cls-3 {
+        fill: #5ae4a7;
+        font-family: LucidaSansUnicode, 'Lucida Sans Unicode';
+        font-size: 30px;
+      }
+
+      .cls-3, .cls-4 {
+        letter-spacing: .03em;
+      }
+
+      .cls-5 {
+        letter-spacing: .12em;
+      }
+
+      .cls-2 {
+        font-family: Impact, Impact;
+        font-size: 120px;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(87.41 183.65)"><tspan class="cls-4"><tspan x="0" y="0">Libra</tspan></tspan><tspan class="cls-5" x="0" y="144" xml:space="preserve">				</tspan><tspan class="cls-4" x="144" y="144">Universal</tspan></text>
+  <g>
+    <line class="cls-1" x1="92" y1="275.83" x2="224" y2="275.83"/>
+    <line class="cls-1" x1="356.4" y1="151.67" x2="719" y2="151.67"/>
+    <text class="cls-3" transform="translate(202.94 386.54)"><tspan x="0" y="0">ride the wave of fantasy</tspan></text>
+  </g>
+</svg>

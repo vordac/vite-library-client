@@ -1,0 +1,14 @@
+.book{
+    background-color: rgb(242, 242, 242);
+    border-radius: 16px;
+    transition: .3s ease all;
+    padding: 16px;
+    border: 1px solid black;
+}
+
+.book:hover{
+    background-color: rgb(0, 167, 0);
+    transition: .3s ease all;
+    cursor: pointer;
+    color: white;
+}

@@ -1,0 +1,99 @@
+.main{
+    padding: 16px;
+    margin: 0 16px;
+    border-radius: 16px;
+    /* border: 2px solid black; */
+    display: flex;
+}
+
+.main-manage{
+}
+
+.main-manage-image img{
+    height: 240px;
+}
+
+.main-manage-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.main-manage-search-input input{
+    background-color: white;
+    border: 1px solid black;
+    height: 24px;
+    padding: 8px;
+    margin: 0 16px;
+    font-size: 16px;
+    color: black;
+}
+
+.main-manage-search-button button{
+    background-color: green;
+    border: 1px solid black;
+    font-weight: bold;
+    transition: .3s ease all;
+}
+
+.main-manage-search-button button:hover{
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    transition: .3s ease all;
+}
+
+.main-manage-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-manage-register-label{
+
+}
+
+.main-manage-register-button button{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    transition: .3s ease all;
+}
+
+.main-manage-register-button button:hover{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    transition: .3s ease all;
+}
+
+.main-manage-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-manage-login-label{
+
+}
+
+.main-manage-login-button button{
+    background-color: transparent;
+    border: none;
+    color: green;
+    transition: .3s ease all;
+}
+
+.main-manage-login-button button:hover{
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 220, 0);
+    transition: .3s ease all;
+}
+
+.main-image img{
+    width: 640px;
+}

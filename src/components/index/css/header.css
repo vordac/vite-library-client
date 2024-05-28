@@ -1,0 +1,87 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 16px;
+}
+
+.header-icon img{
+    width: 32px;
+    height: 32px;
+}
+
+.header-icon img:hover{
+    cursor: pointer;
+    transform: translateY(4px);
+}
+
+
+.header-nav a{
+    color: black;
+    font-weight: 400;
+    transition: .3s ease all;
+    margin: 0 8px;
+}
+
+.header-nav a:hover{
+    color: black;
+    cursor: pointer;
+    transition: .3s ease all;
+    text-decoration: underline;
+}
+
+.header-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-buttons-login{
+    background-color: white;
+    border: 2px solid transparent;
+    color: black;
+    border-radius: 0;
+    transition: .3s ease all;
+    margin: 0 8px;
+}
+
+.header-buttons-register{
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    border-radius: 0;
+    transition: .3s ease all;
+    margin: 0 8px;
+}
+
+.header-buttons-login:hover{
+    border: 2px solid transparent;
+    border-radius: 0;
+    transition: .3s ease all;
+    color: rgb(0, 197, 0);
+}
+
+.header-buttons-register:hover{
+    background-color: black;
+    border: 2px solid transparent;
+    color: white;
+    border-radius: 0;
+    transition: .3s ease all;
+}
+
+.header-logout-button{
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    border-radius: 0;
+    transition: .3s ease all;
+    margin: 0 8px;
+}
+
+.header-logout-button:hover{
+    background-color: black;
+    border: 2px solid transparent;
+    color: white;
+    border-radius: 0;
+    transition: .3s ease all;
+}
