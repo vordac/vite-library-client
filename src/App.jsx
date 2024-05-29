@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes, Outlet, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-import axios from "axios";
 import './App.css'
 
 import Header from './components/index/jsx/Header';
@@ -18,6 +17,7 @@ import Librarian from './components/librarian/jsx/Librarian';
 import Bibliographer from './components/bibliographer/jsx/Bibliographer';
 import SignIn from './components/signin/jsx/SignIn';
 import SignUp from './components/signup/jsx/SignUp';
+import BookInfo from './components/bookinfo/jsx/BookInfo';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -32,6 +32,7 @@ function App() {
     }
   }, []);
 
+  
   const LayoutIndex = () => {
     return (
       <>
@@ -145,6 +146,16 @@ function App() {
     )
   }
 
+  const LayoutBook = () => {
+    return (
+      <>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <BookInfo />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <Router>
@@ -162,6 +173,7 @@ function App() {
             <Route path="/bibliographer" element={<LayoutBibliographer />}></Route>
             <Route path="/signin" element={<LayoutSignin />} />
             <Route path="/signup" element={<LayoutSignup />} />
+            <Route path="/book/:bookId" element={<LayoutBook />} />
           </Routes>
         </div>
       </Router>
