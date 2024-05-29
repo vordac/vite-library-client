@@ -150,7 +150,7 @@ function App() {
     return (
       <>
         <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        <BookInfo />
+        <BookInfo currentUser={currentUser}/>
         <Footer />
       </>
     )
