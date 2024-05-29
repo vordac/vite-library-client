@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
+import Book from "./Book";
+import "../css/search.css";
 
-const Search = () => {
-
-    
+const Search = ({ searchResults }) => {
 
     return (
-        <div className='footer'>
-            <p>Search</p>
+        <div>
+            <div className="all">
+                {searchResults.map((book) => (
+                    <Book book={book} key={book.book_id} />
+                ))}
+            </div>
         </div>
     );
 };

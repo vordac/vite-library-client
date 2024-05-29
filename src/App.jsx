@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes, Outlet, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import axios from "axios";
 import './App.css'
 
 import Header from './components/index/jsx/Header';
@@ -19,11 +20,12 @@ import SignIn from './components/signin/jsx/SignIn';
 import SignUp from './components/signup/jsx/SignUp';
 
 function App() {
-
   const [currentUser, setCurrentUser] = useState(null);
+  const [books, setBooks] = useState(null);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    const jwtToken = localStorage.getItem('jwtToken');
+    const jwtToken = localStorage.getItem("jwtToken");
     if (jwtToken) {
       const decodedToken = jwtDecode(jwtToken);
       setCurrentUser(decodedToken);
@@ -33,17 +35,17 @@ function App() {
   const LayoutIndex = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-        <Main currentUser={currentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <Main currentUser={currentUser} setSearchResults={setSearchResults} />
         <Footer />
       </>
-    )
-  }
+    );
+  };
 
   const LayoutLogin = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Login />
       </>
     )
@@ -52,7 +54,7 @@ function App() {
   const LayoutRegister = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Register />
       </>
     )
@@ -61,7 +63,7 @@ function App() {
   const LayoutAll = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <All />
       </>
     )
@@ -70,7 +72,7 @@ function App() {
   const LayoutPopular = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Popular />
         <Footer />
       </>
@@ -80,7 +82,7 @@ function App() {
   const LayoutPublisher = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Publisher />
         <Footer />
       </>
@@ -90,8 +92,8 @@ function App() {
   const LayoutSearch = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-        <Search />
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <Search searchResults={searchResults} />
         <Footer />
       </>
     )
@@ -100,7 +102,7 @@ function App() {
   const LayoutSearchAdvanced = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <SearchAdvanced />
         <Footer />
       </>
@@ -110,7 +112,7 @@ function App() {
   const LayoutLibrarian = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Librarian />
         <Footer />
       </>
@@ -120,7 +122,7 @@ function App() {
   const LayoutBibliographer = () => {
     return (
       <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <Bibliographer />
         <Footer />
       </>
@@ -130,7 +132,7 @@ function App() {
   const LayoutSignin = () => {
     return (
       <>
-        <SignIn setCurrentUser={setCurrentUser}/>
+        <SignIn setCurrentUser={setCurrentUser} />
       </>
     )
   }
@@ -145,24 +147,24 @@ function App() {
 
   return (
     <>
-        <Router>
-          <div className="App">
-            <Routes>
-              <Route path="/" element={<LayoutIndex />}></Route>
-              <Route path="/login" element={<LayoutLogin />}></Route>
-              <Route path="/register" element={<LayoutRegister />}></Route>
-              <Route path="/all" element={<LayoutAll />}></Route>
-              <Route path="/popular" element={<LayoutPopular />}></Route>
-              <Route path="/publisher" element={<LayoutPublisher />}></Route>
-              <Route path="/search" element={<LayoutSearch />}></Route>
-              <Route path="/search-advanced" element={<LayoutSearchAdvanced />}></Route>
-              <Route path="/librarian" element={<LayoutLibrarian />}></Route>
-              <Route path="/bibliographer" element={<LayoutBibliographer />}></Route>
-              <Route path="/signin" element={<LayoutSignin />} />
-              <Route path="/signup" element={<LayoutSignup />} />
-            </Routes>
-          </div>
-        </Router>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<LayoutIndex />}></Route>
+            <Route path="/login" element={<LayoutLogin />}></Route>
+            <Route path="/register" element={<LayoutRegister />}></Route>
+            <Route path="/all" element={<LayoutAll />}></Route>
+            <Route path="/popular" element={<LayoutPopular />}></Route>
+            <Route path="/publisher" element={<LayoutPublisher />}></Route>
+            <Route path="/search" element={<LayoutSearch />}></Route>
+            <Route path="/search-advanced" element={<LayoutSearchAdvanced />}></Route>
+            <Route path="/librarian" element={<LayoutLibrarian />}></Route>
+            <Route path="/bibliographer" element={<LayoutBibliographer />}></Route>
+            <Route path="/signin" element={<LayoutSignin />} />
+            <Route path="/signup" element={<LayoutSignup />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   )
 }
