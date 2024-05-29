@@ -85,3 +85,19 @@
     border-radius: 0;
     transition: .3s ease all;
 }
+
+.header-mybooks-button{
+    background-color: white;
+    border: 2px solid transparent;
+    color: black;
+    border-radius: 0;
+    transition: .3s ease all;
+    margin: 0 8px;
+}
+
+.header-mybooks-button:hover{
+    border: 2px solid transparent;
+    border-radius: 0;
+    transition: .3s ease all;
+    color: rgb(0, 197, 0);
+}

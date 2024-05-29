@@ -56,6 +56,7 @@ const Header = ({currentUser, setCurrentUser}) => {
             </div>
             {currentUser ? (
                 <div className='header-logout'>
+                    <button className='header-mybooks-button' onClick={handleLogoutClick}>My Books</button>
                     <button className='header-logout-button' onClick={handleLogoutClick}>Logout</button>
                 </div>
             ) : (

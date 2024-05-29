@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import '../css/bookinfo.css';
-import 'sweetalert2';
-
+import Swal from 'sweetalert2';
 
 const BookInfo = ({ currentUser }) => {
     const [book, setBook] = useState(null);
@@ -28,9 +27,32 @@ const BookInfo = ({ currentUser }) => {
         return <div>Loading...</div>;
     }
 
-    const handleLendBookClick = () => {
-        
-    }
+    const handleLendBookClick = async () => {
+        try {
+          const response = await axios.post(
+            "http://localhost:5000/lend-book",
+            {
+              employee_personal_id: 2,
+              book_isbn: book.isbn,
+              reader_id: currentUser.userId,
+            },
+            { withCredentials: true }
+          );
+      
+          if (response.data.success) {
+            // Show success message using sweetalert2
+            Swal.fire("Success!", "Book has been lent.", "success");
+          } else {
+            // Show error message using sweetalert2
+            Swal.fire("Error!", "Failed to lend the book.", "error");
+          }
+        } catch (error) {
+          console.error("Error lending book:", error);
+          // Show error message using sweetalert2
+          Swal.fire("Error!", "Failed to lend the book.", "error");
+        }
+      };
+      
 
     const handleAuthorizeClick = () => {
         navigate('/signin');
