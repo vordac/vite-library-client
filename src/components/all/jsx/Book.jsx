@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import '../css/book.css';
 
 const Book = ({ book }) => {
-    const { book_id, isbn, title, category_name, publisher_name, language_name, author_name } = book;
+    const { book_id, isbn, title, category_name, publisher_name, language_name, author_name, fund_address } = book;
 
     const navigate = useNavigate();
 
@@ -20,6 +20,7 @@ const Book = ({ book }) => {
             <Card.Text className='book-category'><b>Category:</b> {category_name}</Card.Text>
             <Card.Text className='book-publisher'><b>Publisher:</b> {publisher_name}</Card.Text>
             <Card.Text className='book-language'><b>Language:</b> {language_name}</Card.Text>
+            <Card.Text className='book-address'><b>Lend Address:</b> {fund_address}</Card.Text>
         </Card>
     );
 };

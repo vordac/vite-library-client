@@ -26,7 +26,7 @@ const BookInfo = ({ currentUser }) => {
   if (!book) {
     return <div>Loading...</div>;
   }
-  
+
   const handleLendBookClick = async () => {
     try {
       const response = await axios.post(
@@ -58,7 +58,7 @@ const BookInfo = ({ currentUser }) => {
     navigate('/signin');
   }
 
-  const { book_id, isbn, title, category_name, publisher_name, language_name, author_name, quantity, status } = book;
+  const { book_id, isbn, title, category_name, publisher_name, language_name, author_name, quantity, status, fund_address } = book;
   console.log(quantity, status);
   return (
     <div className='book-info'>
@@ -71,6 +71,8 @@ const BookInfo = ({ currentUser }) => {
           <div className='book-info-container-left-publisher'><b>Publisher:</b> {publisher_name}</div>
           <div className='book-info-container-left-language'><b>Language:</b> {language_name}</div>
           <div className='book-info-container-left-author'><b>Author:</b> {author_name}</div>
+          <div className='book-info-container-left-author'><b>Lend Address:</b> {fund_address}</div>
+          
         </div>
         <div className='book-info-container-right'>
           <div className='book-info-container-right-status'>{status.toLowerCase()}</div>
