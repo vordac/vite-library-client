@@ -43,24 +43,6 @@ function App() {
     );
   };
 
-  const LayoutLogin = () => {
-    return (
-      <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        <Login />
-      </>
-    )
-  }
-
-  const LayoutRegister = () => {
-    return (
-      <>
-        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        <Register />
-      </>
-    )
-  }
-
   const LayoutAll = () => {
     return (
       <>
@@ -162,8 +144,6 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<LayoutIndex />}></Route>
-            <Route path="/login" element={<LayoutLogin />}></Route>
-            <Route path="/register" element={<LayoutRegister />}></Route>
             <Route path="/all" element={<LayoutAll />}></Route>
             <Route path="/popular" element={<LayoutPopular />}></Route>
             <Route path="/publisher" element={<LayoutPublisher />}></Route>

@@ -10,11 +10,11 @@ const Main = ({ currentUser, setSearchResults }) => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate("/login");
+    navigate("/signin");
   };
 
   const handleRegisterClick = () => {
-    navigate("/register");
+    navigate("/signup");
   };
 
   const handleSearchClick = async () => {

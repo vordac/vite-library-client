@@ -1,9 +1,8 @@
 .book{
-    background-color: rgb(242, 242, 242);
-    border-radius: 16px;
+    background-color: rgb(255, 255, 255);
     transition: .3s ease all;
-    padding: 16px;
-    border: 1px solid black;
+    border-radius: 0;
+    border: 4px solid black;
 }
 
 .book:hover{
@@ -11,4 +10,8 @@
     transition: .3s ease all;
     cursor: pointer;
     color: white;
+}
+
+.book-title{
+    font-size: 24px;
 }

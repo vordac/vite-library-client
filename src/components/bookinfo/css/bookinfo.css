@@ -1,19 +1,46 @@
-.book-order{
-    margin: 16px;
+.book-info{
+    padding: 16px;
 }
 
-.book-order button{
-    background-color: transparent;
+.book-info-container{
+    padding: 16px;
     border: 2px solid black;
-    border-radius: 0;
-    color: black;
-    transition: .3s ease all;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.book-order button:hover{
+.book-info-container-left{
+    text-align: left;
+}
+
+.book-info-container-left-title{
+    font-size: 24px;
+}
+
+.book-info-container-right-status{
+    color: green;
+    font-weight: bold;
+    margin: 0 8px;
+}
+
+.book-info-container-right{
+    display: flex;
+    align-items: center;
+}
+
+.book-info-container-right-control-order button{
     background-color: black;
     border: 2px solid black;
     border-radius: 0;
     color: white;
+    transition: .3s ease all;
+}
+
+.book-info-container-right-control-order button:hover{
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 0;
+    color: black;
     transition: .3s ease all;
 }
