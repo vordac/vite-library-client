@@ -58,7 +58,7 @@ const BookInfo = ({ currentUser }) => {
     navigate('/signin');
   }
 
-  const { book_id, isbn, title, category_name, publisher_name, language_name, author_name, quantity, status, fund_address } = book;
+  const { book_id, isbn, title, category_name, publisher_name, language_name, author_name, quantity, status, fund_address, librarian } = book;
   console.log(quantity, status);
   return (
     <div className='book-info'>
@@ -72,7 +72,7 @@ const BookInfo = ({ currentUser }) => {
           <div className='book-info-container-left-language'><b>Language:</b> {language_name}</div>
           <div className='book-info-container-left-author'><b>Author:</b> {author_name}</div>
           <div className='book-info-container-left-author'><b>Lend Address:</b> {fund_address}</div>
-          
+          <div className='book-info-container-left-librarian'><b>Librarian:</b> {librarian}</div>
         </div>
         <div className='book-info-container-right'>
           <div className='book-info-container-right-status'>{status.toLowerCase()}</div>

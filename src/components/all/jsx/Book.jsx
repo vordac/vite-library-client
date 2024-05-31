@@ -15,7 +15,7 @@ const Book = ({ book }) => {
     return (
         <Card className="book" onClick={handleBookClick}>
             <Card.Title className='book-title'><b>{title}</b> </Card.Title>
-            <Card.Text className='book-author'><i>{author_name}</i></Card.Text>
+            <Card.Text className='book-author'><b>Author: </b>{author_name}</Card.Text>
             <Card.Text className='book-subtitle'><b>ISBN:</b> {isbn}</Card.Text>
             <Card.Text className='book-category'><b>Category:</b> {category_name}</Card.Text>
             <Card.Text className='book-publisher'><b>Publisher:</b> {publisher_name}</Card.Text>
