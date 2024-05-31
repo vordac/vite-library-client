@@ -35,10 +35,12 @@ const BookInfo = ({ currentUser }) => {
           employee_personal_id: 10,
           book_isbn: book.isbn,
           reader_id: currentUser.userId,
+          employee_name: book.librarian, // send the librarian value as employee_name
+          address: book.fund_address, // send the fund_address value as address
         },
         { withCredentials: true }
       );
-
+  
       if (response.data.success) {
         // Show success message using sweetalert2
         Swal.fire("Success!", "Book has been lent.", "success");
