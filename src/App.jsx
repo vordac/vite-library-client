@@ -6,8 +6,6 @@ import './App.css'
 import Header from './components/index/jsx/Header';
 import Main from './components/index/jsx/Main';
 import Footer from './components/index/jsx/Footer';
-import Login from './components/login/jsx/Login';
-import Register from './components/register/jsx/Register';
 import All from './components/all/jsx/All';
 import Popular from './components/popular/jsx/Popular';
 import Publisher from './components/publisher/jsx/Publisher';
@@ -18,6 +16,7 @@ import Bibliographer from './components/bibliographer/jsx/Bibliographer';
 import SignIn from './components/signin/jsx/SignIn';
 import SignUp from './components/signup/jsx/SignUp';
 import BookInfo from './components/bookinfo/jsx/BookInfo';
+import MyBooks from './components/mybooks/jsx/MyBooks';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -32,7 +31,7 @@ function App() {
     }
   }, []);
 
-  
+
   const LayoutIndex = () => {
     return (
       <>
@@ -48,6 +47,15 @@ function App() {
       <>
         <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
         <All />
+      </>
+    )
+  }
+
+  const LayoutMyBooks = () => {
+    return (
+      <>
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <MyBooks currentUser={currentUser}/>
       </>
     )
   }
@@ -115,7 +123,7 @@ function App() {
   const LayoutSignin = () => {
     return (
       <>
-        <SignIn setCurrentUser={setCurrentUser} />
+        <SignIn setCurrentUser={setCurrentUser}/>
       </>
     )
   }
@@ -132,7 +140,7 @@ function App() {
     return (
       <>
         <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
-        <BookInfo currentUser={currentUser}/>
+        <BookInfo currentUser={currentUser} />
         <Footer />
       </>
     )
@@ -154,6 +162,7 @@ function App() {
             <Route path="/signin" element={<LayoutSignin />} />
             <Route path="/signup" element={<LayoutSignup />} />
             <Route path="/book/:bookId" element={<LayoutBook />} />
+            <Route path="/my-books" element={<LayoutMyBooks />} />
           </Routes>
         </div>
       </Router>

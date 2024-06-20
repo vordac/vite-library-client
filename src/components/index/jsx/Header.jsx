@@ -37,6 +37,10 @@ const Header = ({currentUser, setCurrentUser}) => {
         navigate('/signup');
     }
 
+    const handleMyBookClick = () => {
+        navigate('/my-books');
+    }
+
     const handleLogoutClick = () => {
         localStorage.removeItem('jwtToken');
         setCurrentUser(null);
@@ -56,7 +60,7 @@ const Header = ({currentUser, setCurrentUser}) => {
             </div>
             {currentUser ? (
                 <div className='header-logout'>
-                    <button className='header-mybooks-button' onClick={handleLogoutClick}>My Books</button>
+                    <button className='header-mybooks-button' onClick={handleMyBookClick}>My Books</button>
                     <button className='header-logout-button' onClick={handleLogoutClick}>Logout</button>
                 </div>
             ) : (
